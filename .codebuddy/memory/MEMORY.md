@@ -16,6 +16,9 @@
 
 ## 工具环境
 
+- **提交必须带 `-m`**：本机环境变量 `EDITOR=cat`（`VISUAL` 为空），无 `-m` 的 `git commit` 会执行 `cat` 读 stdin 并**永久挂起**（表现为"提交半天没成功"）。已在 `c:\Memory` 设 `core.editor = "code --wait"` 兜底；其它仓库若出现同样症状，先 `git var GIT_EDITOR` 确认，再用 `git commit -m` 或 `git config core.editor "code --wait"`。
+- 判断卡死：`Get-CimInstance Win32_Process -Filter "name='git.exe'"` 看命令行；`.git/COMMIT_EDITMSG` 若仍是模板注释即为等待编辑器。清理：`Stop-Process -Id <pid> -Force`，必要时删 `.git/index.lock`（索引已暂存内容不会丢）。
+
 - 本机 PowerShell（部分命令如 `&`、`@{u}`、`(if ...)` 会解析失败，用 `;` 分隔、`Select-Object` 可用）。
 - Python 位于 `C:\Users\mintli\.workbuddy\binaries\python\versions\3.14.3\python.exe`（含 openpyxl）。
 - Git 凭据由 `credential.helper=manager` 管理，访问 GitHub/GHE 无需手动输密码。
