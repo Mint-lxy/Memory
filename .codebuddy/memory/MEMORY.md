@@ -4,7 +4,8 @@
 
 - `c:\Memory` 是本机长期工作记忆目录，同时是一个 git 仓库，**已关联远程 `origin = https://github.com/Mint-lxy/Memory.git`（private，分支 `main`）**。工作记忆文件写入 `.codebuddy/memory/` 后，需 `git add` + `commit` + `push` 才能在线上仓库可见（2026-09-14 建立）。
 - 用户此前误以为"提交了仓库里就有"：该仓库原先**没有配置任何 remote**，且 GitHub 上是空库；根因是 commit ≠ push。以后写完记忆文件应顺手推送。
-- 文档类交付物放 `C:\Users\mintli\OneDrive - Deloitte (CN)\Documents`；未经允许不改动工作区项目；交付物偏好带图片示例。
+- 文档类交付物放 `C:\Users\mintli\OneDrive - Deloitte (CN)\Documents`；未经允许不改动工作区项目；交付物偏好带图片示例（周报例外：Markdown、无图）。
+- **周报口径**：区间按**实际出勤日**计（含调休上班的周末），不固定为周一至周五；文件名与标题带区间，如 `周报-2026-09-14_09-20.md`。版式固定为：工作总结 → 各板块（工作内容 + 产出物表）→ 本周学习与收获（技能，能力性表述）→ 下周计划（标注待带教确认）；**不写风险表/个人想法章节**；正式书面语，术语保留英文原名（Quickly Guide、conversation、knowledge、marketplace、spec）。
 
 ## 相关仓库速查
 
